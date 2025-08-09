@@ -1,10 +1,11 @@
+
 import java.util.Scanner;
 
 public class Arrays {
     public static void main(String[] args) {
 
         int[] arr = null;
-        int choice, size;
+        int choice, size = 0;
         System.out.println("\nMenu:");
         System.out.println("1. Create array");
         System.out.println("2. Display array");
@@ -32,7 +33,7 @@ public class Arrays {
                         System.out.println("Array is empty");
                         break;
                     }
-                    displayArray(arr);
+                    displayArray(arr, size);
                     break;
 
                 case 3:
@@ -47,6 +48,7 @@ public class Arrays {
                     System.out.println("Enter index : ");
                     index = sc.nextInt();
                     arr = insertElement(arr, element, index);
+                    size++;
                     break;
 
                 case 4:
@@ -58,6 +60,7 @@ public class Arrays {
                     System.out.println("Enter index : ");
                     indexx = sc.nextInt();
                     deleteElement(arr, indexx);
+                    size--;
                     break;
 
                 case 5:
@@ -91,8 +94,8 @@ public class Arrays {
         return arr;
     }
 
-    static void displayArray(int[] arr) {
-        for (int element : arr) System.out.print(element + ", ");
+    static void displayArray(int[] arr, int size) {
+        for (int i = 0; i < size; i++) System.out.print(arr[i] + ", ");
     }
 
     static int[] insertElement(int[] arr, int element, int index) {
@@ -129,5 +132,3 @@ public class Arrays {
     }
 
 }
-
-// 1 2 3 4 5
