@@ -2,8 +2,10 @@
   <dictionary name="project">
     <words>
       <w>elementx</w>
+      <w>fcfs</w>
       <w>indexx</w>
       <w>nums</w>
+      <w>srtf</w>
     </words>
   </dictionary>
 </component>
