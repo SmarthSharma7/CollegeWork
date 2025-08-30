@@ -1,14 +1,15 @@
+package Assignment_2;
 
 import java.util.Scanner;
 
-public class BinarySearch {
+public class BinarySearch_Q1 {
     public static void main(String[] args) {
 
         int[] arr;
         int size;
         int element;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the input array: ");
+        System.out.println("Enter the size of the input sorted array: ");
         size = sc.nextInt();
         arr = new int[size];
         for (int i = 0; i < size; i++) {

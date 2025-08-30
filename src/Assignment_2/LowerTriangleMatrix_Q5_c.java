@@ -1,13 +1,14 @@
+package Assignment_2;
 
 import java.util.Scanner;
 
-public class UpperTriangleMatrix {
+public class LowerTriangleMatrix_Q5_c {
     public static void main(String[] args) {
 
         int[] arr;
         int size;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the input upper triangle matrix array: ");
+        System.out.println("Enter the size of the input lower triangle matrix array: ");
         size = sc.nextInt();
         arr = new int[size];
         for (int i = 0; i < size; i++) {
@@ -18,16 +19,18 @@ public class UpperTriangleMatrix {
         for (int i : arr) System.out.print(i + ", ");
 
         size = solveQuadratic(size);
-        System.out.println(size);
-        displayUpperTriangleMatrix(arr, size);
+
+        System.out.println("\n");
+        System.out.println("Matrix : ");
+        displayLowerTriangleMatrix(arr, size);
 
     }
 
-    static void displayUpperTriangleMatrix(int[] arr, int size) {
+    static void displayLowerTriangleMatrix(int[] arr, int size) {
         int count = 0;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (i > j) System.out.print(0 + " ");
+                if (i < j) System.out.print(0 + " ");
                 else {
                     System.out.print(arr[count] + " ");
                     count++;

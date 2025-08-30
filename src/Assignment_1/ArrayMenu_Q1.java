@@ -1,7 +1,8 @@
+package Assignment_1;
 
 import java.util.Scanner;
 
-public class Arrays {
+public class ArrayMenu_Q1 {
     public static void main(String[] args) {
 
         int[] arr = null;
@@ -24,6 +25,10 @@ public class Arrays {
                 case 1:
                     System.out.println("Enter size of the array : ");
                     size = sc.nextInt();
+                    if (size < 1) {
+                        System.out.println("Array size cannot be less than 1!");
+                        break;
+                    }
                     arr = createArray(size);
                     System.out.println("Array created");
                     break;
@@ -47,7 +52,11 @@ public class Arrays {
                     int index;
                     System.out.println("Enter index : ");
                     index = sc.nextInt();
-                    arr = insertElement(arr, element, index);
+                    if (index < 0 ||  index > size) {
+                        System.out.println("Invalid index!");
+                        break;
+                    }
+                    arr = insertElement(arr, element, index, size);
                     size++;
                     break;
 
@@ -59,7 +68,11 @@ public class Arrays {
                     int indexx;
                     System.out.println("Enter index : ");
                     indexx = sc.nextInt();
-                    deleteElement(arr, indexx);
+                    if (indexx < 0 ||  indexx >= size) {
+                        System.out.println("Invalid index!");
+                        break;
+                    }
+                    deleteElement(arr, indexx, size);
                     size--;
                     break;
 
@@ -98,14 +111,14 @@ public class Arrays {
         for (int i = 0; i < size; i++) System.out.print(arr[i] + ", ");
     }
 
-    static int[] insertElement(int[] arr, int element, int index) {
-        int[] newArr = new int[arr.length + 1];
+    static int[] insertElement(int[] arr, int element, int index, int size) {
+        int[] newArr = new int[size + 1];
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < size; i++) {
             newArr[i] = arr[i];
         }
 
-        for (int i = arr.length - 1; i >= index; i--) {
+        for (int i = size - 1; i >= index; i--) {
             newArr[i + 1] = newArr[i];
         }
         newArr[index] = element;
@@ -113,12 +126,12 @@ public class Arrays {
         return newArr;
     }
 
-    static void deleteElement(int[] arr, int index) {
-        for (int i = index; i < arr.length - 1; i++) {
+    static void deleteElement(int[] arr, int index, int size) {
+        for (int i = index; i < size - 1; i++) {
             arr[i] = arr[i + 1];
         }
 
-        arr[arr.length - 1] = 0;
+        arr[size - 1] = 0;
     }
 
     static void linearSearch(int[] arr, int element) {

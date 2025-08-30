@@ -1,11 +1,17 @@
 
+package Assignment_2;
+
 import java.util.Scanner;
 
-public class SparseTriangle {
+public class SparseMatrix_Q6_a {
     public static void main(String[] args) {
         int[][] sparseMatrix = inputSparseMatrix();
+        System.out.println("Triplet before transpose : ");
         displaySparseMatrix(sparseMatrix);
         transposeSparseMatrix(sparseMatrix);
+        sortSparseMatrix(sparseMatrix); // To sort the triplet in row major order after taking transpose
+        System.out.println("\nTriplet after transpose : ");
+        displaySparseMatrix(sparseMatrix);
     }
 
     static int[][] inputSparseMatrix() {
@@ -42,7 +48,23 @@ public class SparseTriangle {
     }
 
     static void transposeSparseMatrix(int[][] sparseMatrix) {
-        
+        for (int i = 0; i <= sparseMatrix[0][2]; i++) {
+            int temp = sparseMatrix[i][0];
+            sparseMatrix[i][0] = sparseMatrix[i][1];
+            sparseMatrix[i][1] = temp;
+        }
+    }
+
+    static void sortSparseMatrix(int[][] sparseMatrix) {
+        for (int i = 0; i < sparseMatrix[0][2] - 1; i++) {
+            for (int j = 1; j < sparseMatrix[0][2] - i; j++) {
+                if (sparseMatrix[j + 1][0] < sparseMatrix[j][0] || (sparseMatrix[j + 1][0] == sparseMatrix[j][0] && sparseMatrix[j + 1][1] < sparseMatrix[j][1])) {
+                    int[] temp = sparseMatrix[j];
+                    sparseMatrix[j] = sparseMatrix[j + 1];
+                    sparseMatrix[j + 1] = temp;
+                }
+            }
+        }
     }
 
 }

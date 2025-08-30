@@ -1,19 +1,11 @@
 
-import java.util.Scanner;
+package Assignment_2;
 
-public class BubbleSort {
+public class BubbleSort_Q2 {
     public static void main(String[] args) {
 
-        int[] arr;
-        int size;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the input array: ");
-        size = sc.nextInt();
-        arr = new int[size];
-        for (int i = 0; i < size; i++) {
-            System.out.println("Enter " + i + "th element: ");
-            arr[i] = sc.nextInt();
-        }
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        int size = 7;
 
         System.out.println("Before sorting: ");
         for (int i : arr) System.out.print(i + ", ");

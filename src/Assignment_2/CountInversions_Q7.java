@@ -1,7 +1,8 @@
+package Assignment_2;
 
 import java.util.Scanner;
 
-public class CountDistinct {
+public class CountInversions_Q7 {
     public static void main(String[] args) {
 
         int[] arr;
@@ -14,17 +15,18 @@ public class CountDistinct {
             System.out.println("Enter " + i + "th element: ");
             arr[i] = sc.nextInt();
         }
-        System.out.println("Number of distinct elements in array: " + countDistinct(arr, size));
+
+        System.out.println("Number of inversions in array: " + countInversions(arr, size));
 
     }
 
-    static int countDistinct(int[] arr, int size) {
-        MergeSort.mergeSort(arr, 0, size - 1);
-        int count = 1;
-        for (int i = 1; i < size; i++) {
-            if (arr[i] != arr[i - 1]) count++;
+    static int countInversions(int[] arr, int size) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (arr[i] > arr[j]) count++;
+            }
         }
         return count;
     }
-
 }
