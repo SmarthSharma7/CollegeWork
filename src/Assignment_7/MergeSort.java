@@ -1,4 +1,5 @@
-package Utils;
+
+package Assignment_7;
 
 import java.util.Scanner;
 

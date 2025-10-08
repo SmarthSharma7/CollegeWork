@@ -1,6 +1,6 @@
 package Assignment_2;
 
-import Utils.MergeSort;
+import Assignment_7.MergeSort;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
 package Assignment_1;
 
 import java.util.Scanner;
-import Utils.MergeSort;
+import Assignment_7.MergeSort;
 
 public class RemoveDuplicates_Q2 {
     public static void main(String[] args) {
@@ -27,7 +27,8 @@ public class RemoveDuplicates_Q2 {
 
     static int removeDuplicates(int[] arr, int size) {
         MergeSort.mergeSort(arr, 0, size - 1);
-        /* MergeSort.mergeSort function is made by me in file "MergeSort" in package "utils" which I have imported */
+        /* MergeSort.mergeSort function is made by me in file "MergeSort" in package "Assignment_7" which I have
+        imported */
         int newSize = 0;
         for (int i = 0; i < size; i++) {
             if (i == 0 || arr[i] != arr[i - 1]) {
